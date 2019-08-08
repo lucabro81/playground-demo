@@ -1,0 +1,15 @@
+@import '../../../../themes';
+@import '../../../../mixins';
+
+button {
+  width: 160px;
+  height: 40px;
+
+  @each $name, $theme in $themes {
+    &.#{$name} {
+      border: 2px get-deep($theme, colors, primary) solid;
+      color: get-deep($theme, colors, primary);
+    }
+  }
+
+}

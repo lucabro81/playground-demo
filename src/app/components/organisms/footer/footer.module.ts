@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContentBarComponent } from './content-bar.component';
+import { FooterComponent } from './footer.component';
+import { FormModule } from '../../molecules/form/form.module';
 import { ContentModule } from '../../molecules/content/content.module';
 
 @NgModule({
-  declarations: [ContentBarComponent],
+  declarations: [FooterComponent],
   imports: [
     CommonModule,
+    FormModule,
     ContentModule
   ],
-  exports: [ContentBarComponent]
+  exports: [FooterComponent]
 })
-export class ContentBarModule { }
+export class FooterModule { }

@@ -1,0 +1,19 @@
+@import '../../../../themes';
+@import '../../../../mixins';
+
+input {
+  min-width: 265px;
+  height: 40px;
+  padding:10px;
+
+  @each $name, $theme in $themes {
+    &.#{$name} {
+      border: 2px get-deep($theme, colors, secondary) solid;
+      &::placeholder {
+        color: get-deep($theme, colors, secondary);
+        @include opacity(0.7);
+      }
+    }
+  }
+
+}

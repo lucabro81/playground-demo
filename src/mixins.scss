@@ -1,0 +1,14 @@
+@function get-deep($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+@mixin opacity($val) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$val*100})";
+  filter: alpha(opacity=($val*100));
+  -moz-opacity: $val;
+  -khtml-opacity: $val;
+  opacity: $val;
+}
