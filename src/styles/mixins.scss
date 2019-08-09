@@ -1,0 +1,129 @@
+// merge recursively two lists
+@function _testi_merge($parent-map, $child-map) {
+  $result: $parent-map;
+  @each $key, $value in $child-map {
+    @if (not map-has-key($result, $key)) or (type-of(map-get($result, $key)) != type-of($value)) or (not (type-of(map-get($result, $key)) == map and type-of($value) == map)) {
+      $result: map-merge($result, ($key: $value));
+    } @else {
+      $result: map-merge($result, ($key: _testi_merge(map-get($result, $key), $value)));
+    }
+  }
+  @return $result;
+}
+
+// return a preset object according to the given key
+@function _testi_getPreset($key) {
+  @if map-has-key($testi, $key) {
+    @return map-get($testi, $key);
+  }
+  @return null;
+}
+
+// return the style object according to the given key
+@function _tetsi_getStyle($presetKey) {
+  $style: _testi_getPreset($presetKey);
+  @if $style != null {
+    $extend: _tetsi_getStyle(map-get($style, "extend"));
+    $style: map-remove($style, "extend");
+    $style: map-merge((
+      antialiased: true
+    ), _testi_merge($extend, $style));
+    @return $style;
+  } @else {
+    @return ();
+  }
+}
+
+@function get-deep($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// apply a list of css rules
+@mixin applyStyle($style) {
+  @each $key, $value in $style {
+    #{$key}: $value;
+  }
+}
+
+@mixin testi($a:null) {
+  // extend default style with a preset
+  $style: _tetsi_getStyle($a);
+  // set style
+  @include applyStyle($style);
+}
+
+// da provare
+@mixin themeize($themes, $styles) {
+  @each $name, $theme in $themes {
+    @each $selector, $style in $styles {
+      .#{$selector}-#{$name} {
+        @include applyStyle($style);
+      }
+    }
+  }
+}
+
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin opacity($val) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$val*100})";
+  filter: alpha(opacity=($val*100));
+  -moz-opacity: $val;
+  -khtml-opacity: $val;
+  opacity: $val;
+}
+
+/* image backgrounds relative to img/ with random param */
+@mixin img-bg($url:'', $centered:true, $cover:false, $repeat:false) {
+  //@if $url!='' {background-image: url('../img/#{$url}?ver=1.0.0');}
+  @if $url!='' {background-image: url('../images/#{$url}');}
+  @if $centered {background-position: center;}
+  @if $cover {background-size: cover;}
+  @if $repeat {
+  } @else {
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin centerElement() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin centerX() {
+  position: absolute;
+  left: 50%;
+  @include transform(translate(-50%));
+}
+
+@mixin centerY() {
+  position: absolute;
+  top: 50%;
+  @include transform(translate(0, -50%));
+}
+
+@mixin centerBottomElement() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, 100%));
+}
+
+@mixin centerTopElement() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, 0));
+}

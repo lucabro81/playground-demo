@@ -1,5 +1,4 @@
-@import '../../../../themes';
-@import '../../../../mixins';
+@import '../../../../styles/index';
 
 input {
   min-width: 265px;
@@ -7,7 +6,7 @@ input {
   padding:10px;
 
   @each $name, $theme in $themes {
-    &.#{$name} {
+    &.theme-#{$name} {
       border: 2px get-deep($theme, colors, secondary) solid;
       &::placeholder {
         color: get-deep($theme, colors, secondary);

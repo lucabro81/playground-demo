@@ -1,12 +1,11 @@
-@import '../../../../themes';
-@import '../../../../mixins';
+@import '../../../../styles/index';
 
 button {
   width: 160px;
   height: 40px;
 
   @each $name, $theme in $themes {
-    &.#{$name} {
+    &.theme-#{$name} {
       border: 2px get-deep($theme, colors, primary) solid;
       color: get-deep($theme, colors, primary);
     }

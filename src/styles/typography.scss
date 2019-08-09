@@ -1,0 +1,23 @@
+$testi:(
+  "Gotham-Book": (
+    font-family: Gotham-Book,
+    font-weight: normal,
+    font-style: normal,
+  ),
+  "Gotham-Medium": (
+    font-family: Gotham-Medium,
+    font-weight: normal,
+    font-style: normal,
+  ),
+  "Gotham-Bold": (
+    font-family: Gotham-Bold,
+    font-weight: normal,
+    font-style: normal,
+  ),
+
+  "button": (
+    extend: "Gotham-Book",
+    font-size: 12px,
+    letter-spacing: 2px
+  )
+)
