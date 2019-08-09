@@ -1,16 +1,17 @@
 @import '../../../../styles/index';
 
-input {
-  min-width: 265px;
-  height: 40px;
-  padding:10px;
+input[type='text'] {
+  min-width: 266px;
+  min-height: 40px;
+  padding: 12px;
 
   @each $name, $theme in $themes {
     &.theme-#{$name} {
       border: 2px get-deep($theme, colors, secondary) solid;
       &::placeholder {
+        @include testi('placeholder');
         color: get-deep($theme, colors, secondary);
-        @include opacity(0.7);
+        @include opacity(0.3);
       }
     }
   }

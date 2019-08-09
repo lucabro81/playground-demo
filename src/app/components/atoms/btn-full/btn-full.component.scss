@@ -1,8 +1,8 @@
 @import '../../../../styles/index';
 
 button {
-  width: 160px;
-  height: 40px;
+  width: 180px;
+  height: 50px;
 
   @each $name, $theme in $themes {
     &.theme-#{$name} {

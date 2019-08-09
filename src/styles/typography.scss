@@ -4,20 +4,105 @@ $testi:(
     font-weight: normal,
     font-style: normal,
   ),
+
   "Gotham-Medium": (
     font-family: Gotham-Medium,
     font-weight: normal,
     font-style: normal,
   ),
+
   "Gotham-Bold": (
     font-family: Gotham-Bold,
     font-weight: normal,
     font-style: normal,
   ),
 
+  "menu": (
+    extend: "Gotham-Book",
+    font-size: 16px,
+    letter-spacing: 0px,
+    line-height: 24px,
+  ),
+
+  "menu-footer": (
+    extend: "Gotham-Book",
+    font-size: 14px,
+    letter-spacing: 1px,
+  ),
+
+  "paragraph": (
+    extend: "Gotham-Book",
+    font-size: 14px,
+    letter-spacing: 0px,
+    line-height: 24px,
+  ),
+
+  "paragraph-footer": (
+    extend: "Gotham-Book",
+    font-size: 14px,
+    letter-spacing: 0px,
+    line-height: 24px,
+  ),
+
+  "paragraph-tab": (
+    extend: "Gotham-Book",
+    font-size: 14px,
+    letter-spacing: 0px,
+    line-height: 20px,
+  ),
+
+  "paragraph-header": (
+    extend: "Gotham-Book",
+    font-size: 10px,
+    letter-spacing: 50px,
+    line-height: 135px,
+  ),
+
+  "paragraph-important": (
+    extend: "Gotham-Book",
+    font-size: 16px,
+    letter-spacing: 0px,
+    line-height: 24px,
+  ),
+
+  "tabs": (
+    extend: "Gotham-Book",
+    font-size: 14px,
+    letter-spacing: 1px,
+    line-height: 12px,
+  ),
+
+  "big-title": (
+    font-family: "Gotham-Bold",
+    font-size: 70px,
+    line-height: 65px,
+  ),
+
+  "small-title": (
+    font-family: "Gotham-Medium",
+    font-size: 16px,
+    letter-spacing: 6px,
+    line-height: 24px,
+  ),
+
   "button": (
     extend: "Gotham-Book",
-    font-size: 12px,
-    letter-spacing: 2px
+    font-size: 14px,
+    letter-spacing: 2px,
+    line-height: 18px,
+  ),
+
+  "placeholders": (
+    extend: "Gotham-Book",
+    font-size: 14px,
+    letter-spacing: 0px,
+    line-height: 76px,
+  ),
+
+  "cookies": (
+    extend: "Gotham-Book",
+    font-size: 10px,
+    letter-spacing: 1px,
+    line-height: 12px,
   )
 )
