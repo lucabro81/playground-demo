@@ -1,0 +1,19 @@
+@import '../../../../styles/index';
+
+h1 {
+
+  @each $name, $theme in $themes {
+    &.theme-#{$name} {
+      color: get-deep($theme, colors, primary);
+    }
+  }
+
+  &.type-big {
+    @include testi('big-title');
+  }
+
+  &.type-small {
+    @include testi('small-title');
+  }
+
+}

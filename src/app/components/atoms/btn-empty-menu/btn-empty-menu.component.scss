@@ -1,0 +1,15 @@
+@import '../../../../styles/index';
+
+button {
+  padding: 50px 45px;
+
+  @each $name, $theme in $themes {
+    &.theme-#{$name} {
+      color: get-deep($theme, colors, secondary);
+    }
+  }
+
+  @include testi('menu');
+  text-transform: lowercase;
+
+}

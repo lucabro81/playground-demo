@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BaseComponent } from '../../system/base.component';
+import { BaseComponent } from '../../../system/base.component';
 
 @Component({
   selector: 'plg-text-area',

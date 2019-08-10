@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TitleType } from './utils/Enums';
 
 @Component({
   selector: 'plg-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  public static TITLE_TYPE: TitleType;
+
   title = 'playground-demo';
 }

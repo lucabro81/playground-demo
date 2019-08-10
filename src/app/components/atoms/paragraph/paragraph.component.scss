@@ -1,0 +1,30 @@
+@import '../../../../styles/index';
+
+p {
+
+  @each $name, $theme in $themes {
+    &.theme-#{$name} {
+      color: get-deep($theme, colors, primary);
+    }
+  }
+
+  @include testi('paragraph');
+
+  &.type-header {
+    @include testi('paragraph-header');
+  }
+
+  &.type-important {
+    @include testi('paragraph-important');
+    text-align: center;
+  }
+
+  &.type-tab {
+    @include testi('paragraph-tab');
+  }
+
+  &.type-footer {
+    @include testi('paragraph-footer');
+  }
+
+}

@@ -7,7 +7,7 @@ input[type='text'] {
 
   @each $name, $theme in $themes {
     &.theme-#{$name} {
-      border: 2px get-deep($theme, colors, secondary) solid;
+      border: 1px get-deep($theme, colors, secondary) solid;
       &::placeholder {
         @include testi('placeholder');
         color: get-deep($theme, colors, secondary);

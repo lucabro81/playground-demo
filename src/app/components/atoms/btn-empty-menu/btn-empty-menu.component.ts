@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BaseComponent } from '../../../system/base.component';
 
 @Component({
   selector: 'plg-btn-empty-menu',
   templateUrl: './btn-empty-menu.component.html',
   styleUrls: ['./btn-empty-menu.component.scss']
 })
-export class BtnEmptyMenuComponent implements OnInit {
+export class BtnEmptyMenuComponent extends BaseComponent implements OnInit {
 
-  constructor() { }
+  @Input('text') text: string;
+  constructor() {
+    super();
+  }
 
   ngOnInit() {
   }
