@@ -4,7 +4,7 @@ p {
 
   @each $name, $theme in $themes {
     &.theme-#{$name} {
-      color: get-deep($theme, colors, primary);
+      color: get-deep($theme, colors, secondary);
     }
   }
 
@@ -26,5 +26,7 @@ p {
   &.type-footer {
     @include testi('paragraph-footer');
   }
+
+  margin-bottom: 30px;
 
 }

@@ -1,0 +1,12 @@
+@import '../../../../styles/index';
+
+:host{
+  display: block;
+
+  .container {
+    width:1140px;
+    margin: auto;
+    @include grid(12, 30px);
+    padding: 70px 0;
+  }
+}

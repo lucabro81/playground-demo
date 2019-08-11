@@ -4,7 +4,7 @@ h1 {
 
   @each $name, $theme in $themes {
     &.theme-#{$name} {
-      color: get-deep($theme, colors, primary);
+      color: get-deep($theme, colors, secondary);
     }
   }
 
@@ -15,5 +15,7 @@ h1 {
   &.type-small {
     @include testi('small-title');
   }
+
+  margin-bottom: 30px;
 
 }

@@ -6,8 +6,8 @@ button {
 
   @each $name, $theme in $themes {
     &.theme-#{$name} {
-      border: 2px get-deep($theme, colors, primary) solid;
-      color: get-deep($theme, colors, primary);
+      border: 1px get-deep($theme, colors, secondary) solid;
+      color: get-deep($theme, colors, secondary);
     }
   }
 

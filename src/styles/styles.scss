@@ -3,6 +3,7 @@
 
 body {
   @include testi('paragraph');
+  background-color: get-deep($common, background);
 }
 
 button {

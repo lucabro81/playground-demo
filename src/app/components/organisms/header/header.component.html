@@ -1,3 +1,15 @@
-<p>
-  header works!
-</p>
+<div class="wrapper">
+
+  <div *ngFor="let classes of classArr"
+       [ngClass] = "classes"></div>
+
+  <div class="container">
+    header content
+  </div>
+
+  <div class="pagination">
+    <div *ngFor="let classes of classArr; let i = index"
+         [ngClass]="{'active':classes['active']}"
+         (click)="selectSlide(i)"></div>
+  </div>
+</div>

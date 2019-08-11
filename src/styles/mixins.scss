@@ -41,6 +41,29 @@
   @return $map;
 }
 
+@function unfoldTransition ($transition) {
+  // Default values
+  $property: all;
+  $duration: .2s;
+  $easing: null; // Browser default is ease, which is what we want
+  $delay: null; // Browser default is 0, which is what we want
+  $defaultProperties: ($property, $duration, $easing, $delay);
+
+  // Grab transition properties if they exist
+  $unfoldedTransition: ();
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i)
+    } @else {
+      $p: nth($defaultProperties, $i)
+    }
+    $unfoldedTransition: append($unfoldedTransition, $p);
+  }
+
+  @return $unfoldedTransition;
+}
+
 // apply a list of css rules
 @mixin applyStyle($style) {
   @each $key, $value in $style {
@@ -83,10 +106,14 @@
   opacity: $val;
 }
 
-/* image backgrounds relative to img/ with random param */
+@mixin grid($col, $gap) {
+  display: grid;
+  grid-template-columns: repeat($col, 1fr);
+  column-gap: $gap;
+}
+
 @mixin img-bg($url:'', $centered:true, $cover:false, $repeat:false) {
-  //@if $url!='' {background-image: url('../img/#{$url}?ver=1.0.0');}
-  @if $url!='' {background-image: url('../images/#{$url}');}
+  @if $url!='' {background-image: url('/assets/images/#{$url}');}
   @if $centered {background-position: center;}
   @if $cover {background-size: cover;}
   @if $repeat {
@@ -126,4 +153,19 @@
   top: 50%;
   left: 50%;
   @include transform(translate(-50%, 0));
+}
+
+// Usage:   @include transition(width, height 0.3s ease-in-out);
+// Output:  -webkit-transition(width 0.2s, height 0.3s ease-in-out);
+//          transition(width 0.2s, height 0.3s ease-in-out);
+//
+// Pass in any number of transitions
+@mixin transition($transitions...) {
+  $unfoldedTransitions: ();
+  @each $transition in $transitions {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+  }
+
+  -webkit-transition: $unfoldedTransitions;
+  transition: $unfoldedTransitions;
 }
