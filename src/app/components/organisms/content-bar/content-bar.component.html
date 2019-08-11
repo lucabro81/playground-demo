@@ -1,3 +1,14 @@
-<p>
-  <img><plg-content></plg-content>
-</p>
+<div class="wrapper {{'theme-'+theme}}" [ngClass]="{reverse:reverse}"
+     [ngStyle]="{'background-image': 'url(/assets/images/' + img + '.jpg)'}">
+  <div [ngClass]="{container:true, reverse:reverse}">
+    <div class="img-cont">img</div>
+    <div class="text-cont {{'theme-'+theme}}">
+      <div class="wrapper">
+        <plg-content [theme] = "theme" [cta] = "cta">
+          <div class="title"><ng-content select="div.title"></ng-content></div>
+          <div class="paragraph"><ng-content select="div.paragraph"></ng-content></div>
+        </plg-content>
+      </div>
+    </div>
+  </div>
+</div>

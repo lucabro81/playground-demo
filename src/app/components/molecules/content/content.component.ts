@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonService } from '../../../services/common.service';
 import { BaseComponent } from '../../../system/base.component';
 
 @Component({
   selector: 'plg-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.scss']
+  styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent extends BaseComponent implements OnInit {
 

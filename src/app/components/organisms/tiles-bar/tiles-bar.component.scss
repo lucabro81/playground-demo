@@ -8,5 +8,9 @@
     margin: auto;
     @include grid(12, 30px);
     padding: 70px 0;
+
+    .wrapper {
+      grid-column: span 4;
+    }
   }
 }

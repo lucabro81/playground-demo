@@ -10,9 +10,17 @@
     width: 1140px;
     margin: auto;
     display: flex;
-    justify-content: flex-end;
-    *:last-child {
-      margin-right: -90px;
+    .logo{
+      flex:1;
+      @include img-bg('logo-playground-white.png');
+      background-position: left;
+    }
+    .menu {
+      display: flex;
+      justify-content: flex-end;
+      *:last-child {
+        margin-right: -90px;
+      }
     }
   }
 }

@@ -1,10 +1,14 @@
 <plg-header></plg-header>
-<!--<p>-->
-  <!--home works!-->
 <plg-tiles-bar></plg-tiles-bar>
-  <!--<plg-content-bar cta = "'the players >'" theme = "'dark">-->
-    <!--<div class="title">sdfdsggdsddsfg</div>-->
-  <!--</plg-content-bar>-->
-  <!--<plg-content-bar></plg-content-bar>-->
-  <!--<plg-content-bar></plg-content-bar>-->
-<!--</p>-->
+<plg-content-bar [theme] = "'dark'" [img]="'banner-we-are'" [cta]="'the players'">
+  <div class="title">we<br/>are.</div>
+  <div class="paragraph">Consectetur adipiscing elit.<br/>Nulla condimentum tortor sem.</div>
+</plg-content-bar>
+<plg-content-bar [theme] = "'light'" [img]="'banner-we-do'" [reverse]="true" [cta]="'the projects'">
+  <div class="title">we<br/>do.</div>
+  <div class="paragraph">Consectetur adipiscing elit.<br/>Nulla condimentum tortor sem.</div>
+</plg-content-bar>
+<plg-content-bar [theme] = "'dark'" [img]="'banner-carrers'" [cta]="'the positions'">
+  <div class="title">careers.</div>
+  <div class="paragraph">Consectetur adipiscing elit.<br/>Nulla condimentum tortor sem.</div>
+</plg-content-bar>
