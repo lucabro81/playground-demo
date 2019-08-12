@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { DataService, IData, ILabel, ILabelsData } from '../../../services/data.service';
 import { Subscription } from 'rxjs';
 
@@ -16,6 +16,9 @@ export class TabContainerComponent implements OnInit, OnDestroy {
   public labels: Array<ILabel> = [<ILabel>{}];
   public selectedArr: Array<string> = ['contrast'];
 
+  @Input('startWithTab') startWithTab: number = 1;
+
+  @Output() onGetDataStarted: EventEmitter<any> = new EventEmitter<any>();
   @Output() onGetDataSuccess: EventEmitter<IData> = new EventEmitter<IData>();
   @Output() onGetDataError: EventEmitter<any> = new EventEmitter<any>();
 
@@ -27,6 +30,7 @@ export class TabContainerComponent implements OnInit, OnDestroy {
       this.selectedArr = data.items.map(() => null);
       this.labels = data.items;
       console.log("this.labels", data);
+      this.getData(this.startWithTab);
     })
   }
 
@@ -35,6 +39,8 @@ export class TabContainerComponent implements OnInit, OnDestroy {
   }
 
   public getData(id: number) {
+
+    this.onGetDataStarted.emit();
 
     if (this._lastSelected !== null) {
       this.selectedArr[this._lastSelected] = null;

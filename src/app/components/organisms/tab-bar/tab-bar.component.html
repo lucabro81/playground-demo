@@ -1,3 +1,15 @@
-<p>
-  tab-bar works!
-</p>
+<div class="container">
+  <div class="tab-selectors">
+    <plg-tab-container [startWithTab] = "1"
+                       (onGetDataStarted)="onGetDataStarted($event)"
+                       (onGetDataSuccess)="onGetDataSuccess($event)"
+                       (onGetDataError)="onGetDataError($event)"></plg-tab-container>
+  </div>
+  <div class="tab-views">
+    <div class="text-cont">
+      <plg-loader [stop] = "stop">
+        <p [innerHTML] = "data"></p>
+      </plg-loader>
+    </div>
+  </div>
+</div>

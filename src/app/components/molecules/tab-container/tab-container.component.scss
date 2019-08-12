@@ -1,4 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
+
+  plg-tab {
+    position: relative;
+    p {
+      margin-top:14px;
+    }
+  }
 }
