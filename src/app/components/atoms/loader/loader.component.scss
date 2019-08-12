@@ -1,0 +1,10 @@
+@import '../../../../styles/index';
+
+.loader {
+  min-width:100%;
+  min-height:28px;
+
+  @include img-bg('loader.png');
+
+  @include rotating();
+}

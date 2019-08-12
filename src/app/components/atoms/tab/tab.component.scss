@@ -1,0 +1,21 @@
+@import '../../../../styles/index';
+
+button {
+  min-height: 60px;
+  width: 100%;
+  padding: 25px;
+
+  text-transform: lowercase;
+
+  @each $name, $theme in $themes {
+    &.theme-#{$name} {
+      background: get-deep($theme, colors, primary);
+      color: get-deep($theme, colors, secondary);
+    }
+
+    &.selected {
+      cursor: default;
+    }
+  }
+
+}

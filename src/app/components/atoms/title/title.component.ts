@@ -15,7 +15,6 @@ export class TitleComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('commonService', this.commonService);
   }
 
 }

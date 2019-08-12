@@ -65,6 +65,13 @@ $testi:(
     line-height: 12px,
   ),
 
+  "tabs-selected": (
+    extend: "Gotham-Bold",
+    font-size: 14px,
+    letter-spacing: 1px,
+    line-height: 12px,
+  ),
+
   "big-title": (
     font-family: "Gotham-Bold",
     font-size: 70px,

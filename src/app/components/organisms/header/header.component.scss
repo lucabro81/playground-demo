@@ -37,7 +37,7 @@
     height: 780px;
     margin: auto;
 
-    @include grid(12, 30px);
+    @include gridWithGutter(12, 30px);
     grid-template-rows: repeat(3, 1fr);
     z-index: 100;
 

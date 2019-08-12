@@ -1,3 +1,10 @@
-<p>
-  tab-container works!
-</p>
+<div class="container">
+  <plg-tab *ngFor="let label of labels; let i = index"
+           [theme] = "'contrast'"
+           [selected] = "selectedArr[i]"
+           (click) = "getData(label.id)">
+    <plg-loader [stop] = "label.label != null">
+      {{label.label}}
+    </plg-loader>
+  </plg-tab>
+</div>

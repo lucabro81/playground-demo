@@ -60,11 +60,11 @@ export class HeaderComponent extends BaseComponent implements OnInit, OnDestroy 
     this.classArr[i]['show'] = true;
     this.classArr[i]['active'] = true;
 
-    this.carouselInterval = window.setInterval(
+    this.carouselInterval = <any>setInterval(
       () => {
         const lastIndex = this.carouselIndex;
         clearTimeout(this.carouselTimeout);
-        this.carouselTimeout = setTimeout(() => {
+        this.carouselTimeout = <any>setTimeout(() => {
           this.classArr[lastIndex]['show'] = false;
         }, 1000);
         this.classArr[lastIndex]['active'] = false;
@@ -75,7 +75,6 @@ export class HeaderComponent extends BaseComponent implements OnInit, OnDestroy 
         this.classArr[this.carouselIndex]['show'] = true;
         this.classArr[this.carouselIndex]['active'] = true;
 
-        console.log(this.classArr);
       }, 4000
     );
   }

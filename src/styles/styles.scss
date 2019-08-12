@@ -9,4 +9,5 @@ body {
 button {
   @include testi('button');
   text-transform: uppercase;
+  cursor: pointer;
 }

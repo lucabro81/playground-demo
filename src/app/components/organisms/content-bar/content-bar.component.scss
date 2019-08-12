@@ -45,7 +45,7 @@
       margin: auto;
       z-index: 1;
       position: relative;
-      @include grid(12, 0px);
+      @include gridWithGutter(12, 0px);
 
       flex-direction: row;
       .img-cont {
@@ -61,7 +61,7 @@
         grid-column: span 5;
         max-height: inherit;
 
-        @include grid(5, 0px);
+        @include gridWithGutter(5, 0px);
         grid-template-rows: repeat(3, 1fr);
         &:before {
           content: '';

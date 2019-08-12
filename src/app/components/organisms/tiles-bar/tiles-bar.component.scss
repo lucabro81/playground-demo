@@ -6,7 +6,7 @@
   .container {
     width:1140px;
     margin: auto;
-    @include grid(12, 30px);
+    @include gridWithGutter(12, 30px);
     padding: 70px 0;
 
     .wrapper {
