@@ -1,1 +1,6 @@
-<textarea placeholder="{{placeholder}}" [ngClass]="'theme-' + theme"></textarea>
+<textarea placeholder="{{placeholder}}"
+          class="{{'theme-' + theme + (errMessage ? ' error' : '')}}"
+          [formControl]="control"
+          required="{{required}}"
+          (click)="onclick()"
+          value="{{value}}"></textarea>

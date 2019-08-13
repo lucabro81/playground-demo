@@ -9,6 +9,7 @@ import { BaseComponent } from '../../../system/base.component';
 export class BtnFullComponent extends BaseComponent implements OnInit {
 
   @Input('text') text: string;
+  @Input('type') type: string = 'button';
   constructor() {
     super();
   }

@@ -1,0 +1,46 @@
+@import '../../../../styles/index';
+
+:host {
+  display: block;
+
+  .wrapper {
+    @each $name, $theme in $themes {
+      &.theme-#{$name} {
+        background-color: get-deep($theme, colors, primary);
+        color: get-deep($theme, colors, secondary);
+      }
+    }
+  }
+
+  .container {
+    width: 1140px;
+    margin: auto;
+    @include gridWithGutter(12, 30px);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 100px 0 50px 0;
+
+    .contact-us {
+      grid-column: 2 / span 3;
+      grid-row: span 2;
+    }
+
+    .form-cont {
+      grid-column: 6 / span 6;
+      grid-row: span 2;
+    }
+
+
+    .menu-cont {
+      grid-column: span 12;
+      grid-row: 3 / span 1;
+
+      .logo-cont {
+        width:100%;
+      }
+
+      .social-cont {
+        width:100%;
+      }
+    }
+  }
+}

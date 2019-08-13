@@ -1,5 +1,23 @@
-<p>
-  footer
-  <plg-content></plg-content>
-  <plg-form></plg-form>
-</p>
+<div class="wrapper theme-{{theme}}">
+  <div class="container">
+    <div class="contact-us">
+      <plg-content [theme] = "theme">
+        <div class="title">contact<br/>us.</div>
+        <div class="paragraph">
+          Playground srl<br/>
+          Via G. Mazzini 3/C,<br/>
+          Cernusco Sul Naviglio (Milano)<br/><br/>
+          T +39 0240706003
+        </div>
+      </plg-content>
+    </div>
+    <div class="form-cont">
+      <plg-form [theme] = "theme"></plg-form>
+    </div>
+    <div class="menu-cont">
+      <div class="logo-cont">logo</div>
+      <div>menu</div>
+      <div class="social-cont">social</div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,8 @@
-<input type="text" placeholder="{{placeholder}}" [ngClass]="'theme-' + theme" />
+<input type="text"
+       value="{{value}}"
+       placeholder="{{placeholder}}"
+       class="{{'theme-' + theme + (errMessage ? ' error' : '')}}"
+       [formControl]="control"
+       required="{{required}}"
+       email="{{email}}"
+       (click)="onclick()" />

@@ -1,0 +1,37 @@
+@import '../../../../styles/index';
+
+:host {
+
+  display: block;
+
+  form {
+
+    @include gridWithGutter(6, 30px);
+    grid-template-rows: repeat(2, 40px) 140px 50px;
+    row-gap: 15px;
+
+    .name {
+      grid-column: span 3;
+      grid-row: 1 / span 1;
+    }
+
+    .last-name {
+      grid-column: span 3;
+      grid-row: 1 / span 1;
+    }
+
+    .email {
+      grid-column: span 6;
+      grid-row: 2 / span 1;
+    }
+
+    .message {
+      grid-column: span 6;
+      grid-row: 3 / span 1;
+    }
+
+    plg-btn-full {
+      grid-column: span 2;
+    }
+  }
+}

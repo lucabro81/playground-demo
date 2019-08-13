@@ -1,6 +1,30 @@
-<p>
-  <plg-input-text></plg-input-text>
-  <plg-input-text></plg-input-text>
-  <plg-input-text></plg-input-text>
-  <plg-text-area></plg-text-area>
-</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="name">
+    <plg-input-text [theme] = "theme"
+                    [placeholder]="'name'"
+                    [control]="form.get('name')"></plg-input-text>
+  </div>
+  <div class="last-name">
+    <plg-input-text [theme] = "theme"
+                    [placeholder]="'last name'"
+                    [control]="form.get('lastname')"></plg-input-text>
+  </div>
+  <div class="email">
+    <plg-input-text [theme] = "theme"
+                    [placeholder]="'email'"
+                    [errMessage]="formError['email'].errorRecap"
+                    [control]="form.get('email')"
+                    [required] = "true"
+                    [email] = "true"></plg-input-text>
+  </div>
+  <div class="message">
+    <plg-text-area [theme] = "theme"
+                   [placeholder]="'message'"
+                   [errMessage]="formError['message'].errorRecap"
+                   [control]="form.get('message')"
+                   [required] = "true"></plg-text-area>
+  </div>
+  <plg-btn-full [text]="'send'"
+                [theme] = "theme"
+                [type]="'submit'"></plg-btn-full>
+</form>

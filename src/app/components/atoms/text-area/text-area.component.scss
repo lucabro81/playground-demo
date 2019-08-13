@@ -1,7 +1,7 @@
 @import '../../../../styles/index';
 
 textarea {
-  min-width: 265px;
+  width: 100%;
   min-height: 140px;
   padding: 12px;
 
@@ -9,8 +9,18 @@ textarea {
     &.theme-#{$name} {
       border: 1px get-deep($theme, colors, secondary) solid;
       &::placeholder {
+        @include testi('placeholder');
         color: get-deep($theme, colors, secondary);
         @include opacity(0.3);
+      }
+      color: get-deep($theme, colors, secondary);
+
+      &.error {
+        border: 1px get-deep($theme, colors, error) solid;
+        &::placeholder {
+          color: get-deep($theme, colors, error);
+        }
+        color: get-deep($theme, colors, error);
       }
     }
   }
