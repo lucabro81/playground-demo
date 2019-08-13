@@ -7,7 +7,7 @@ button {
   @each $name, $theme in $themes {
     &.theme-#{$name} {
       background-color: get-deep($theme, colors, secondary);
-      color: get-deep($theme, colors, primary)!important;
+      color: get-deep($theme, colors, primary);
     }
   }
 

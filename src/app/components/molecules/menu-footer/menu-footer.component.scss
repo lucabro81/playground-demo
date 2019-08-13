@@ -1,0 +1,13 @@
+@import '../../../../styles/index';
+
+:host{
+  display: block;
+  width: 100%;
+  z-index: 1000;
+
+  .container {
+    display: flex;
+    width: 1140px;
+    justify-content: center;
+  }
+}

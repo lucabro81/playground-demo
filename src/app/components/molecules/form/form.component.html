@@ -24,7 +24,11 @@
                    [control]="form.get('message')"
                    [required] = "true"></plg-text-area>
   </div>
-  <plg-btn-full [text]="'send'"
-                [theme] = "theme"
-                [type]="'submit'"></plg-btn-full>
+  <plg-btn-full [theme] = "theme"
+                [type]="'submit'"
+                [disabled] = "sending">
+    <plg-loader [stop] = "!sending">
+      <p>send</p>
+    </plg-loader>
+  </plg-btn-full><span class = "send-result">{{sendResult}}</span>
 </form>

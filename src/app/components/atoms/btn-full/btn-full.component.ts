@@ -8,7 +8,7 @@ import { BaseComponent } from '../../../system/base.component';
 })
 export class BtnFullComponent extends BaseComponent implements OnInit {
 
-  @Input('text') text: string;
+  @Input('disabled') disabled:boolean = false;
   @Input('type') type: string = 'button';
   constructor() {
     super();

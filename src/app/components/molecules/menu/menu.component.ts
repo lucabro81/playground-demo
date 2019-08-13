@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseComponent } from '../../../system/base.component';
 import { CommonService } from '../../../services/common.service';
-import { TitleType } from '../../../utils/Enums';
 
 @Component({
   selector: 'plg-menu',

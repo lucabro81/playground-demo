@@ -40,6 +40,14 @@ export class DataService {
       }, 2000);
     });
   }
+
+  public sendFormData(data:any):Observable<string> {
+    return Observable.create((observer: Observer<string>) => {
+      setTimeout(() => {
+        observer.next('inviesto!');
+      }, 2000);
+    });
+  }
 }
 
 export interface IDetail {

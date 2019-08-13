@@ -29,7 +29,6 @@ export class InputTextComponent extends BaseComponent implements OnInit, OnChang
     this.value = this.control.value;
 
     if (this.errMessage != null) {
-      // TODO: si può mostrare solo il messaggio di errore ed al click rimetter il valore precedente
       this._value = ((this.control.value !== '') ? ` (${this.control.value})` : '');
       this.value = this.errMessage + this._value;
     }

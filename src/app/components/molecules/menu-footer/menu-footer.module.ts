@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuComponent } from './menu.component';
+import { MenuFooterComponent } from './menu-footer.component';
 import { BtnEmptyMenuModule } from '../../atoms/btn-empty-menu/btn-empty-menu.module';
 
 @NgModule({
-  declarations: [MenuComponent],
+  declarations: [MenuFooterComponent],
   imports: [
     CommonModule,
     BtnEmptyMenuModule
   ],
-  exports: [MenuComponent]
+  exports: [MenuFooterComponent]
 })
-export class MenuModule { }
+export class MenuFooterModule { }

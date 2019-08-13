@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { BaseComponent } from '../../../system/base.component';
-import { FormControl, FormGroup, Validators } from '@angular/forms';['', Validators.required]
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../../../services/data.service';
+['', Validators.required]
 
 
 @Component({
@@ -10,6 +12,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';['', Validat
 })
 export class FormComponent extends BaseComponent implements OnInit {
 
+  public sendResult: string;
+  public sending: boolean = false;
   public form = new FormGroup({
     name: new FormControl(''),
     lastname: new FormControl(''),
@@ -45,7 +49,7 @@ export class FormComponent extends BaseComponent implements OnInit {
     }
   };
 
-  constructor(private _chageRef: ChangeDetectorRef) {
+  constructor(private _chageRef: ChangeDetectorRef, public dataService: DataService) {
     super();
   }
 
@@ -54,6 +58,21 @@ export class FormComponent extends BaseComponent implements OnInit {
 
   onSubmit() {
     this._validation();
+    if (this.form.valid) {
+      this.sending = true;
+      this.sendResult = '';
+      this.dataService
+          .sendFormData(this.form.value)
+          .subscribe(
+            (message: string) => {
+              this.sendResult = message;
+              this.sending = false;
+            },
+            (err) => {
+              this.sendResult = err;
+              this.sending = false;
+            });
+    }
   }
 
   _initFormError() {

@@ -32,6 +32,18 @@
 
     plg-btn-full {
       grid-column: span 2;
+      p {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+
+    .send-result {
+      padding-top: 12px;
+      grid-column: span 4;
     }
   }
 }
