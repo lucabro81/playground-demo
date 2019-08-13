@@ -2,8 +2,6 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { BaseComponent } from '../../../system/base.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../../../services/data.service';
-['', Validators.required]
-
 
 @Component({
   selector: 'plg-form',

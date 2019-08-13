@@ -20,15 +20,11 @@ export class TabBarComponent implements OnInit {
   }
 
   onGetDataSuccess(data:IData) {
-    console.log("onGetDataSuccess data", data.item.content);
     this.stop = true;
     this.data = data.item.content.join('<br />');
-
-    console.log('joined', this.data);
   }
 
   onGetDataError(err:any) {
-    console.log("onGetDataError data", err);
     this.stop = true;
   }
 

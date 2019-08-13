@@ -8,13 +8,10 @@ export class DarkenMenuDirective {
   @HostBinding('class.darken') isDark:boolean = false;
 
   constructor(private el: ElementRef) {
-    console.log("DarkenMenuDirective", el);
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-
-    console.log(document.documentElement.scrollTop );
 
     if (document.body.scrollTop > 200 ||
       document.documentElement.scrollTop > 200) {

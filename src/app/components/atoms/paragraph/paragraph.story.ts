@@ -2,30 +2,6 @@ import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 import { ParagraphComponent } from './paragraph.component';
 
-// @Component({
-//   selector: 'plg-wrapper',
-//   template: '<p><plg-title>{{text}}</plg-title></p>',
-// })
-// export class TitleWrapperComponent implements OnInit {
-//
-//   @Input('text') text: string;
-//   constructor() {}
-//
-//   ngOnInit() {
-//     console.log('text', this.text);
-//   }
-//
-// }
-//
-// @NgModule({
-//   declarations: [TitleWrapperComponent],
-//   imports: [
-//     CommonModule, TitleModule
-//   ],
-//   exports: [TitleWrapperComponent]
-// })
-// export class TitleWrapperModule { }
-
 storiesOf('ATOMS', module)
   .addDecorator(
     moduleMetadata({

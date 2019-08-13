@@ -26,11 +26,14 @@ export class TextAreaComponent extends BaseComponent implements OnInit, OnChange
 
   ngOnChanges() {
 
-    this.value = this.control.value;
+    if (this.control) {
 
-    if (this.errMessage != null) {
-      this._value = ((this.control.value !== '') ? ` (${this.control.value})` : '');
-      this.value = this.errMessage + this._value;
+      this.value = this.control.value;
+
+      if (this.errMessage != null) {
+        this._value = ((this.control.value !== '') ? ` (${this.control.value})` : '');
+        this.value = this.errMessage + this._value;
+      }
     }
   }
 

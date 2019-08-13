@@ -29,7 +29,6 @@ export class TabContainerComponent implements OnInit, OnDestroy {
     this._getLabelsSubscriber = this.dataService.getLabels().subscribe((data: ILabelsData) => {
       this.selectedArr = data.items.map(() => null);
       this.labels = data.items;
-      console.log("this.labels", data);
       this.getData(this.startWithTab);
     })
   }
@@ -56,7 +55,6 @@ export class TabContainerComponent implements OnInit, OnDestroy {
     }
     this._getDataSubscriber = this.dataService.getData(id).subscribe(
       (data: IData) => {
-        console.log("getData", data);
         this.onGetDataSuccess.emit(data);
       },
       (error: any) => {

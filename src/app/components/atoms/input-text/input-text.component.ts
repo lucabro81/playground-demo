@@ -13,7 +13,7 @@ export class InputTextComponent extends BaseComponent implements OnInit, OnChang
   public _value: string;
 
   @Input('placeholder') placeholder: string;
-  @Input('control') control: FormControl;
+  @Input('control') control: FormControl = new FormControl();
   @Input('required') required: boolean = false;
   @Input('email') email: boolean = false;
   @Input('errMessage') errMessage: any = null;
@@ -26,12 +26,15 @@ export class InputTextComponent extends BaseComponent implements OnInit, OnChang
   }
 
   ngOnChanges() {
-    this.value = this.control.value;
 
-    if (this.errMessage != null) {
-      this._value = ((this.control.value !== '') ? ` (${this.control.value})` : '');
-      this.value = this.errMessage + this._value;
-    }
+      this.value = this.control.value;
+
+      console.log("placeholder", this.placeholder);
+
+      if (this.errMessage != null) {
+        this._value = ((this.control.value !== '') ? ` (${this.control.value})` : '');
+        this.value = this.errMessage + this._value;
+      }
   }
 
   onclick() {

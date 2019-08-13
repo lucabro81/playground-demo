@@ -1,5 +1,7 @@
 import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { TabContainerModule } from './tab-container.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 const template = `
 <div class="container">
@@ -12,6 +14,8 @@ storiesOf('MOLECULES', module)
   .addDecorator(
     moduleMetadata({
       imports: [
+        BrowserModule,
+        HttpClientModule,
         TabContainerModule,
       ]
     })
