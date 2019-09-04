@@ -2,7 +2,7 @@ $font-path: "/assets/fonts/";
 
 @font-face {
   font-family: 'Gotham-Bold';
-  src: url($font-path +'Gotham-Bold/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+  src: url($font-path + 'Gotham-Bold/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
   url($font-path + 'Gotham-Bold/Gotham-Bold.otf') format('opentype'),
   url($font-path + 'Gotham-Bold/Gotham-Bold.woff') format('woff'),
   url($font-path + 'Gotham-Bold/Gotham-Bold.ttf') format('truetype'),

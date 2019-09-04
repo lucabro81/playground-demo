@@ -1,42 +1,75 @@
 @import '../../../../styles/index';
 
 :host{
-  display: block;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  background-color: transparent;
 
-  @include transition(all .2s ease-out);
-  .menu {
-    margin-top: 0;
-    margin-bottom: 0;
+  display: none;
+
+  @include for-tablet-landscape-up {
+
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+
     @include transition(all .2s ease-out);
-  }
-
-  &.darken {
     .menu {
-      margin-top: -30px;
-      margin-bottom: -30px;
+      margin-top: 0;
+      margin-bottom: 0;
+      @include transition(all .2s ease-out);
     }
-    background-color: #000;
-  }
 
-  .container {
-    width: 1140px;
-    margin: auto;
-    display: flex;
-    .logo{
-      flex:1;
-      @include img-bg('logo-playground-white.png');
-      background-position: left;
-    }
-    .menu {
-      display: flex;
-      justify-content: flex-end;
-      *:last-child {
-        margin-right: -90px;
+    &.darken {
+      .menu {
+        margin-top: -30px;
+        margin-bottom: -30px;
       }
+      background-color: #000;
+    }
+
+    .container {
+
+      width: 100%;
+      margin: auto;
+      display: flex;
+
+      .logo {
+        flex: 1;
+        @include img-bg('logo-playground-white.png');
+      }
+
+      .menu {
+        display: flex;
+        flex: 3;
+        justify-content: flex-start;
+        *:last-child {
+          margin-right: 0px
+        }
+      }
+
+      @include for-tablet-landscape-up {
+        .menu {
+          justify-content: flex-end;
+          *:last-child {
+            margin-right: 30px
+          }
+        }
+
+        @include for-desktop-up {
+          max-width: 1140px;
+
+          .logo {
+            background-position: left;
+          }
+
+          .menu {
+            *:last-child {
+              margin-right: -90px;
+            }
+          }
+        }
+      }
+
     }
   }
 }

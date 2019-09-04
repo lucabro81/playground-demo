@@ -8,6 +8,7 @@ import { MenuModule } from './components/molecules/menu/menu.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CookiesPolicyModule } from './components/molecules/cookies-policy/cookies-policy.module';
 import { DarkenMenuDirective } from './directives/darken-menu.directive';
+import { MenuMobileModule } from './components/molecules/menu-mobile/menu-mobile.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DarkenMenuDirective } from './directives/darken-menu.directive';
 
     AppRoutingModule,
     FooterModule,
+    MenuMobileModule,
     MenuModule,
     CookiesPolicyModule
   ],

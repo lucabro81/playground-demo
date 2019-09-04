@@ -33,25 +33,38 @@
   }
 
   .container {
+
     position: relative;
-    padding-top:120px;
-    width:1140px;
+    padding-top: 120px;
     height: 780px;
+    width:100%;
     margin: auto;
 
-    @include gridWithGutter(12, 30px);
+    @include gridWithGutter(4, 30px);
     grid-template-rows: repeat(3, 1fr);
     z-index: 100;
 
     &:before {
-      content:'';
+      content: '';
       grid-column: span 1;
       grid-row: 1 / 3;
     }
     .wrapper {
-      grid-column: span 3;
+      grid-column: span 2;
       grid-row: 2;
     }
+
+    @include for-tablet-landscape-up {
+      max-width: 1140px;
+
+      @include gridWithGutter(12, 30px);
+
+      .wrapper {
+        grid-column: span 3;
+      }
+
+    }
+
   }
 
   .pagination {

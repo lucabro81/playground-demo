@@ -20,10 +20,5 @@ export class DarkenMenuDirective {
     else {
       this.isDark = false;
     }
-    // if (document.body.scrollTop > 20 ||
-    //   document.documentElement.scrollTop > 20) {
-    //   document.getElementById('subTitle').classList.add('red');
-    //   document.getElementById('paragraph').classList.add('green');
-    // }
   }
 }

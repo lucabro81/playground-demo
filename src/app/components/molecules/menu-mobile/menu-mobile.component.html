@@ -1,0 +1,12 @@
+<div class="container">
+  <div class = "header">
+    <div class = "logo"></div>
+    <fa-icon [icon]="faBars" size="3x" (click) = "toggleMenu()"></fa-icon>
+  </div>
+  <div [ngClass] = "{menu:true, open:isOpen}">
+    <plg-btn-empty-menu [text]="'we are'" [theme] = "'dark'"></plg-btn-empty-menu>
+    <plg-btn-empty-menu [text]="'we do'" [theme] = "'dark'"></plg-btn-empty-menu>
+    <plg-btn-empty-menu [text]="'careers'" [theme] = "'dark'"></plg-btn-empty-menu>
+    <plg-btn-empty-menu [text]="'contact us'" [theme] = "'dark'"></plg-btn-empty-menu>
+  </div>
+</div>

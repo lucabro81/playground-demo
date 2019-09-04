@@ -1,0 +1,62 @@
+@import '../../../../styles/index';
+
+:host {
+
+  display: none;
+
+  @include for-tablet-landscape-down {
+
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    color: #fff;
+
+    .container {
+      width: 100%;
+      margin: auto;
+      display: flex;
+
+      .header {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        fa-icon {
+          flex: 1;
+          text-align: end;
+        }
+
+        .logo {
+          flex: 1;
+          @include img-bg('logo-playground-white.png');
+          background-position: left;
+        }
+      }
+
+      .menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        transform: translatex(110%);
+        top:85px;
+        @include opacity(0);
+        @include transition(all .2s ease-out);
+        plg-btn-empty-menu {
+          background-color: #000;
+          border-bottom: 1px #fff solid;
+          text-align: right;
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+        &.open {
+          transform: translatex(0);
+          @include opacity(1)
+        }
+      }
+    }
+
+  }
+}
