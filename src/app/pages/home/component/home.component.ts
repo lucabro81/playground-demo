@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   }
 
   onMobile(leave:boolean) {
+    console.log('leave2',leave);
     this.reversArr = [false, leave, false];
   }
 

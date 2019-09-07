@@ -1,14 +1,34 @@
 <plg-header></plg-header>
 <plg-tiles-bar></plg-tiles-bar>
-<plg-content-bar [theme] = "'dark'" [img]="'banner-we-are'" [reverse] = "reversArr[0]" [cta]="'the players'">
+<plg-content-bar [theme] = "'dark'"
+                 [img]="'banner-we-are'"
+                 [reverse] = "reversArr[0]"
+                 [cta]="'the players'"
+                 [styles] = "{
+                  'background-size': 'cover'
+                 }">
   <div class="title">we<br/>are.</div>
   <div class="paragraph">Consectetur adipiscing elit.<br/>Nulla condimentum tortor sem.</div>
 </plg-content-bar>
-<plg-content-bar [theme] = "'light'" [img]="'banner-we-do'" [reverse] = "reversArr[1]" [cta]="'the projects'">
+<plg-content-bar [theme] = "'light'"
+                 [img]="'banner-we-do'"
+                 [reverse] = "reversArr[1]"
+                 [cta]="'the projects'"
+                 [styles] = "{
+                  'background-position-x': '67%',
+                  'background-position-y': '-76%',
+                  'background-size': 'none'
+                 }">
   <div class="title">we<br/>do.</div>
   <div class="paragraph">Consectetur adipiscing elit.<br/>Nulla condimentum tortor sem.</div>
 </plg-content-bar>
-<plg-content-bar [theme] = "'dark'" [img]="'banner-carrers'" [reverse] = "reversArr[2]" [cta]="'the positions'">
+<plg-content-bar [theme] = "'dark'"
+                 [img]="'banner-carrers'"
+                 [reverse] = "reversArr[2]"
+                 [cta]="'the positions'"
+                 [styles] = "{
+                  'background-size': 'cover'
+                 }">
   <div class="title">careers.</div>
   <div class="paragraph">Consectetur adipiscing elit.<br/>Nulla condimentum tortor sem.</div>
 </plg-content-bar>

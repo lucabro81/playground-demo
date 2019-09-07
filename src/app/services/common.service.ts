@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ParagraphType, TitleType } from '../utils/Enums';
-import { fromEvent, Subscription } from 'rxjs';
+import { fromEvent, Observable, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/internal/operators';
 
 @Injectable({
@@ -13,6 +13,9 @@ export class CommonService {
 
   private _MOBILE_RES = 899;
   private _firstCall = true;
+  private _notFirstCallArr: Array<boolean> = [];
+  private _resizeArr: Array<Observable<number>> = [];
+  private _index = -1;
 
   constructor() { }
 
@@ -26,21 +29,23 @@ export class CommonService {
 
     let reached = false;
 
-    if (this._firstCall) {
+    this._index++;
+
+    if (!this._notFirstCallArr[this._index]) {
       if (window.innerWidth <= this._MOBILE_RES) {
         handler(reached);
         reached = !reached;
       }
-      this._firstCall = !this._firstCall;
+      this._notFirstCallArr[this._index] = !this._notFirstCallArr[this._index];
     }
 
-    let resize = fromEvent(window, 'resize')
+    this._resizeArr.push(fromEvent(window, 'resize')
       .pipe(
         debounceTime(200),
         map(() => window.innerWidth)
-      );
+      ));
 
-    return resize.subscribe((width) => {
+    return this._resizeArr[this._index].subscribe((width) => {
       if (((width <= this._MOBILE_RES) && !reached) || ((width > this._MOBILE_RES) && reached)) {
         handler(reached);
         reached = !reached;

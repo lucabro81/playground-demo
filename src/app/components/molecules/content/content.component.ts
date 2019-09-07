@@ -12,6 +12,7 @@ export class ContentComponent extends BaseComponent implements OnInit {
   public titleType: any;
   public paragraphType: any;
   @Input('cta') cta: string;
+
   constructor(public commonService: CommonService) {
     super();
     this.titleType = this.commonService.titleType;
