@@ -4,13 +4,31 @@
   display: block;
 
   .container {
-    width:1140px;
+    max-width:1140px;
     margin: auto;
-    @include gridWithGutter(12, 30px);
     padding: 70px 0;
 
     .wrapper {
-      grid-column: span 4;
+      grid-column: 2 / 6;
+
+      plg-tile {
+        margin-bottom: 30px;
+      }
     }
+
+    @include gridWithGutter(6, 30px);
+
+    @include for-tablet-landscape-up {
+
+      @include gridWithGutter(12, 30px);
+
+      .wrapper {
+        grid-column: span 4;
+        plg-tile {
+          margin-bottom: 0;
+        }
+      }
+    }
+
   }
 }

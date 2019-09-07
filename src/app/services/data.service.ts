@@ -7,14 +7,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  public getData(id: number):Observable<IData> {
+  public getData(id: number): Observable<IData> {
     return Observable.create((observer: Observer<IData>) => {
       setTimeout(() => {
         this.http.get<IData>(`assets/data/tab${id}.json`)
             .subscribe(
-              (data:IData) => {
+              (data: IData) => {
                 observer.next(data);
               },
               (error) => {
@@ -26,12 +27,12 @@ export class DataService {
 
   }
 
-  public getLabels():Observable<ILabelsData> {
+  public getLabels(): Observable<ILabelsData> {
     return Observable.create((observer: Observer<ILabelsData>) => {
       setTimeout(() => {
         this.http.get<ILabelsData>('assets/data/labels.json')
             .subscribe(
-              (data:ILabelsData) => {
+              (data: ILabelsData) => {
                 observer.next(data);
               },
               (error) => {
@@ -41,7 +42,7 @@ export class DataService {
     });
   }
 
-  public sendFormData(data:any):Observable<string> {
+  public sendFormData(data: any): Observable<string> {
     return Observable.create((observer: Observer<string>) => {
       setTimeout(() => {
         observer.next('inviesto!');

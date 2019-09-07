@@ -14,6 +14,7 @@
     width: inherit;
     height: 100px;
     @include img-bg('card-play-harder.png');
+    background-size: cover;
   }
   .content {
     width: inherit;
