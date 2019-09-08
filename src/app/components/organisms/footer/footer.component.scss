@@ -13,32 +13,16 @@
   }
 
   .container {
-    width: 1140px;
+    width: 100%;
     margin: auto;
-    @include gridWithGutter(12, 30px);
-    grid-template-rows: repeat(4, 1fr);
-    padding: 100px 0 50px 0;
-
-    .contact-us {
-      grid-column: 2 / span 3;
-      grid-row: span 2;
-    }
-
-    .form-cont {
-      grid-column: 6 / span 6;
-      grid-row: span 2;
-    }
+    padding: 100px 30px 50px 30px;
 
     .logo-cont {
-      grid-column: span 12;
-      grid-row: 3 / span 1;
       height: 100%;
       @include img-bg('logo-playground-white-with-icon.png');
       background-position: bottom;
     }
     .menu-cont {
-      grid-column: span 12;
-      grid-row: 4 / span 1;
 
       .social-cont {
         width:100%;
@@ -64,4 +48,41 @@
       }
     }
   }
+
+  @include for-tablet-landscape-up {
+
+    .container {
+      @include gridWithGutter(12, 30px);
+      grid-template-rows: repeat(4, 1fr);
+      padding: 100px 0 50px 0;
+
+      .contact-us {
+        grid-column: 2 / span 3;
+        grid-row: span 2;
+      }
+
+      .form-cont {
+        grid-column: 6 / span 6;
+        grid-row: span 2;
+      }
+
+      .logo-cont {
+        grid-column: span 12;
+        grid-row: 3 / span 1;
+        height: 100%;
+      }
+      .menu-cont {
+        grid-column: span 12;
+        grid-row: 4 / span 1;
+      }
+    }
+
+    @include for-desktop-up {
+      .container {
+        width: 1140px;
+      }
+    }
+
+  }
+
 }

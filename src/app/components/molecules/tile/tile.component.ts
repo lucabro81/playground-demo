@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BaseComponent } from '../../../system/base.component';
+import { CommonService } from '../../../services/common.service';
 
 @Component({
   selector: 'plg-tile',
@@ -9,11 +10,17 @@ import { BaseComponent } from '../../../system/base.component';
 export class TileComponent extends BaseComponent implements OnInit {
 
   @Input('titleBg') titleBg;
-  constructor() {
+  @Input('styles') styles: any = {};
+
+  constructor(private _commonService: CommonService) {
     super();
   }
 
   ngOnInit() {
+
+    this.styles = Object.assign(this.styles, {
+      'background-image': 'url(/assets/images/' + this.titleBg + ')',
+    });
   }
 
 }

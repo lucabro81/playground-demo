@@ -1,6 +1,9 @@
+@import '../../../../styles/index';
+
 .container {
   display: flex;
-  flex-direction: column;
+
+  flex-direction: row;
 
   plg-tab {
     position: relative;
@@ -8,4 +11,10 @@
       margin-top:14px;
     }
   }
+
+  @include for-tablet-landscape-up {
+
+    flex-direction: column;
+  }
+
 }

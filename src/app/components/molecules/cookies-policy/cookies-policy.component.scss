@@ -1,7 +1,10 @@
+@import '../../../../styles/index';
+
 :host {
+
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: fixed;
   align-items: center;
   padding: 10px;
@@ -12,5 +15,16 @@
 
   p {
     flex: 1;
+    padding-bottom: 20px
   }
+
+  @include for-tablet-landscape-up {
+    width: 100%;
+    flex-direction: row;
+
+    p {
+      padding:0;
+    }
+  }
+
 }

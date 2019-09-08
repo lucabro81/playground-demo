@@ -4,36 +4,61 @@
   display: block;
 
   .container {
-    width: 1140px;
+    width: 100%;
     margin: auto;
-    @include grid(12, 30px);
     padding: 70px 0;
 
-    .tab-selectors {
-      grid-column: span 8;
-    }
     .tab-views {
       background-color: get-deep($themes, light, colors, primary);
       color: get-deep($themes, light, colors, secondary);
-      padding: 50px 0;
-      grid-column: span 15;
+      padding: 50px 50px;
       .text-cont {
-        @include grid(8, 30px);
         min-height: 340px;
         position: relative;
-        &:before {
-          content: '';
-          grid-column: span 2;
-        }
-        plg-loader {
-          grid-column: span 11;
-        }
-        &:after {
-          content: '';
-          grid-column: span 2;
-        }
       }
     }
 
+  }
+
+  @include for-tablet-landscape-up {
+    .container {
+      width:100%;
+      margin: auto;
+      @include grid(12, 30px);
+      padding: 70px 0;
+
+      .tab-selectors {
+        grid-column: span 8;
+      }
+      .tab-views {
+        background-color: get-deep($themes, light, colors, primary);
+        color: get-deep($themes, light, colors, secondary);
+        padding: 50px 0;
+        grid-column: span 15;
+        .text-cont {
+          @include grid(8, 30px);
+          min-height: 340px;
+          position: relative;
+          &:before {
+            content: '';
+            grid-column: span 2;
+          }
+          plg-loader {
+            grid-column: span 11;
+          }
+          &:after {
+            content: '';
+            grid-column: span 2;
+          }
+        }
+      }
+
+    }
+
+    @include for-desktop-up {
+      .container {
+        width: 1140px;
+      }
+    }
   }
 }

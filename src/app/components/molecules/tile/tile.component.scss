@@ -3,18 +3,14 @@
 :host {
   display: flex;
   flex-direction: column;
-  //width: 360px;
   height: 100%;
   background-color: get-deep($themes, light, colors, primary);
-
-  //grid-column: span 4;
 
   .title {
     display: block;
     width: inherit;
     height: 100px;
-    @include img-bg('card-play-harder.png');
-    background-size: cover;
+    background-position: center;
   }
   .content {
     width: inherit;

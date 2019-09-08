@@ -16,7 +16,6 @@ export class ContentBarComponent extends BaseComponent implements OnInit {
 
   public styles: any = {};
 
-
   constructor(private _commonService: CommonService) {
     super();
   }
@@ -25,8 +24,6 @@ export class ContentBarComponent extends BaseComponent implements OnInit {
 
 
     this._commonService.onMobile((leave) => {
-
-      console.log("leave1", leave);
 
       this.styles = {
         'background-image': 'url(/assets/images/' + this.img + '.jpg)',

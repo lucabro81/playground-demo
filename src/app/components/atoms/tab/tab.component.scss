@@ -1,21 +1,40 @@
 @import '../../../../styles/index';
 
-button {
-  min-height: 60px;
-  width: 100%;
-  padding: 25px;
+:host {
+  display: block;
 
-  text-transform: lowercase;
+  width: 33.33%;
 
-  @each $name, $theme in $themes {
-    &.theme-#{$name} {
-      background: get-deep($theme, colors, primary);
-      color: get-deep($theme, colors, secondary);
+  button {
+    height: 100%;
+    min-height: 60px;
+    width: 100%;
+    padding: 25px 10px;
+
+    text-transform: lowercase;
+
+    @each $name, $theme in $themes {
+      &.theme-#{$name} {
+        background: get-deep($theme, colors, primary);
+        color: get-deep($theme, colors, secondary);
+      }
+
+      &.selected {
+        cursor: default;
+      }
     }
 
-    &.selected {
-      cursor: default;
-    }
   }
 
+
+  @include for-tablet-landscape-up {
+
+    width: initial;
+
+    button {
+      width: 100%;
+      height: initial;
+      padding: 25px;
+    }
+  }
 }
