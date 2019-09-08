@@ -22,12 +22,11 @@ export class ContentBarComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
 
+    this.styles = {
+      'background-image': 'url(/assets/images/' + this.img + '.jpg)',
+    };
 
     this._commonService.onMobile((leave) => {
-
-      this.styles = {
-        'background-image': 'url(/assets/images/' + this.img + '.jpg)',
-      };
 
       if (leave) {
         this.styles = Object.assign(this.styles, {'background-size': 'cover'});

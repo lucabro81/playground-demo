@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { DataService, IData, ILabel, ILabelsData } from '../../../services/data.service';
 import { Subscription } from 'rxjs';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'plg-tab-container',
@@ -9,12 +11,15 @@ import { Subscription } from 'rxjs';
 })
 export class TabContainerComponent implements OnInit, OnDestroy {
 
+  // caret = faAngleUp;
+
   private _getLabelsSubscriber: Subscription;
   private _getDataSubscriber: Subscription;
   private _lastSelected: number = null;
 
   public labels: Array<ILabel> = [<ILabel>{}];
   public selectedArr: Array<string> = ['contrast'];
+  public caret: Array<any> = [faAngleUp, faAngleUp, faAngleUp];
 
   @Input('startWithTab') startWithTab: number = 1;
 
@@ -43,10 +48,12 @@ export class TabContainerComponent implements OnInit, OnDestroy {
 
     if (this._lastSelected !== null) {
       this.selectedArr[this._lastSelected] = null;
+      this.caret[this._lastSelected] = faAngleUp;
     }
 
     let index = id - 1;
     this.selectedArr[index] = 'dark';
+    this.caret[index] = faAngleDown;
 
     this._lastSelected = index;
 

@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { BaseComponent } from '../../../system/base.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../../../services/data.service';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'plg-form',
@@ -9,6 +10,8 @@ import { DataService } from '../../../services/data.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent extends BaseComponent implements OnInit {
+
+  faAngleRight = faAngleRight;
 
   public sendResult: string;
   public sending: boolean = false;

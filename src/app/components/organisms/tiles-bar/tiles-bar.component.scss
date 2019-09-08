@@ -10,6 +10,7 @@
 
     .wrapper {
       grid-column: 2 / 6;
+      margin-bottom: 30px;
 
       plg-tile {
         margin-bottom: 30px;
@@ -24,6 +25,7 @@
 
       .wrapper {
         grid-column: span 4;
+        margin-bottom: 0;
         plg-tile {
           margin-bottom: 0;
         }

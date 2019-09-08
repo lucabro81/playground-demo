@@ -12,9 +12,17 @@
     }
   }
 
+  fa-icon {
+    display: none;
+  }
+
   @include for-tablet-landscape-up {
 
     flex-direction: column;
+
+    fa-icon {
+      display: initial;
+    }
   }
 
 }

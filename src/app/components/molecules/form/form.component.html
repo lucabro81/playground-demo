@@ -28,7 +28,7 @@
                 [type]="'submit'"
                 [disabled] = "sending">
     <plg-loader [stop] = "!sending">
-      <p>send</p>
+      <p>send <fa-icon [icon]="faAngleRight"></fa-icon></p>
     </plg-loader>
   </plg-btn-full><span class = "send-result">{{sendResult}}</span>
 </form>
